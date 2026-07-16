@@ -65,11 +65,11 @@ function showArtwork(){
     lightboxDescription.textContent =
         artwork.description;
 
-    lightboxStatus.textContent =
-        artwork.status.toUpperCase();
+    // lightboxStatus.textContent =
+    //     artwork.status.toUpperCase();
 
-    lightboxStatus.className =
-    `status ${artwork.status}`;
+    // lightboxStatus.className =
+    // `status ${artwork.status}`;
 
 }
 

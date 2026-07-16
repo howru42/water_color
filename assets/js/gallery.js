@@ -160,7 +160,12 @@ function buildGallery(category) {
 
     list.forEach(item => {
 
-        grid.appendChild(createArtworkCard(item));
+        const card = createArtworkCard(item);
+
+        card.classList.add("visible");
+
+        grid.appendChild(card);
+
 
     });
 
@@ -220,11 +225,6 @@ function createArtworkCard(item, featured = false) {
 
             </p>
 
-            <span class="status ${item.status}">
-
-                ${capitalize(item.status)}
-
-            </span>
 
         </div>
 
