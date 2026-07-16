@@ -1,26 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Water Color Art Gallery - Explore stunning watercolor paintings">
-    <meta name="theme-color" content="#3498db">
-    <title>Water Color - Art Gallery</title>
-    
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="manifest" href="site.webmanifest">
-    
+
+    <title>Janakiraman | Watercolour Artist</title>
+
+    <meta name="description"
+        content="Original Watercolour Paintings inspired by the streets, villages and landscapes of South India.">
+
+    <meta name="keywords"
+        content="Watercolour Artist, Pondicherry Artist, Auroville Artist, Indian Watercolour Painter">
+
+    <meta name="author" content="Janakiraman">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Janakiraman | Watercolour Artist">
+    <meta property="og:description"
+        content="Original Watercolour Paintings inspired by South India.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="assets/images/hero/hero.jpg">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/gallery.css">
-    <link rel="stylesheet" href="assets/css/responsive.css">
     <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+
 </head>
+
 <body>
-    <div id="app"></div>
-    
+<div id="scrollProgress"></div>
+
+<button id="backToTop" aria-label="Back to top">
+    ↑
+</button>
+    <!-- Navigation -->
+    <header class="header">
+
+        <div class="container">
+
+            <div class="logo">
+                JANAKIRAMAN
+            </div>
+
+            <nav>
+
+                <ul>
+
+                    <li><a href="#featured">Featured</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+
+                </ul>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h1>Watercolour Artist</h1>
+
+            <p>
+                Capturing the quiet poetry of everyday India through watercolour.
+            </p>
+
+            <a href="#gallery" class="btn">
+                Explore Gallery
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- Featured Works -->
+<section id="featured" class="featured">
+    <div class="container">
+        <div id="featuredGrid"></div>
+    </div>
+</section>
+
+<section id="gallery" class="gallery">
+    <div class="container">
+
+        <div id="categoryFilters"></div>
+
+        <div id="galleryGrid"></div>
+
+    </div>
+</section>
+    <!-- About -->
+    <section id="about">
+
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+
+    </section>
+
+    <!-- Footer -->
+    <footer>
+
+    </footer>
+
+    <!-- Lightbox -->
+    <!-- ===========================
+     LIGHTBOX
+=========================== -->
+
+<div id="lightbox" class="lightbox">
+
+    <button id="closeLightbox" class="lightbox-close">
+        ×
+    </button>
+
+    <button id="previousArtwork" class="lightbox-arrow left">
+        ❮
+    </button>
+
+    <div class="lightbox-content">
+
+        <img
+            id="lightboxImage"
+            src=""
+            alt="Artwork">
+
+        <div class="lightbox-info">
+
+            <h2 id="lightboxTitle"></h2>
+
+            <p id="lightboxMedium"></p>
+
+            <p id="lightboxDescription"></p>
+
+            <span id="lightboxStatus"></span>
+
+        </div>
+
+    </div>
+
+    <button id="nextArtwork" class="lightbox-arrow right">
+        ❯
+    </button>
+
+</div>
+
+    <!-- Scripts -->
     <script src="assets/js/data.js"></script>
-    <script src="assets/js/app.js"></script>
     <script src="assets/js/gallery.js"></script>
     <script src="assets/js/lightbox.js"></script>
+    <script src="assets/js/app.js"></script>
+
 </body>
+
 </html>

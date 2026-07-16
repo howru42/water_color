@@ -1,92 +1,173 @@
-// Lightbox Functionality
+console.log("Lightbox loaded");
 
-class Lightbox {
-    constructor() {
-        this.currentItemId = null;
-        this.isOpen = false;
-        this.init();
-    }
+/*
+==========================================================
+LIGHTBOX
+==========================================================
+*/
 
-    init() {
-        document.addEventListener('keydown', (e) => this.handleKeyboard(e));
-    }
+let currentArtworkIndex = 0;
 
-    open(itemId) {
-        this.currentItemId = itemId;
-        this.isOpen = true;
-        this.render();
-    }
+const lightbox = document.getElementById("lightbox");
 
-    close() {
-        this.isOpen = false;
-        this.currentItemId = null;
-        const lightbox = document.getElementById('lightbox');
-        if (lightbox) {
-            lightbox.classList.remove('active');
-        }
-    }
+const lightboxImage = document.getElementById("lightboxImage");
 
-    next() {
-        if (!this.currentItemId) return;
-        const nextItem = gallery.getNextItem(this.currentItemId);
-        if (nextItem) {
-            this.open(nextItem.id);
-        }
-    }
+const lightboxTitle = document.getElementById("lightboxTitle");
 
-    previous() {
-        if (!this.currentItemId) return;
-        const prevItem = gallery.getPreviousItem(this.currentItemId);
-        if (prevItem) {
-            this.open(prevItem.id);
-        }
-    }
+const lightboxMedium = document.getElementById("lightboxMedium");
 
-    render() {
-        const item = gallery.getItem(this.currentItemId);
-        if (!item) return;
+const lightboxDescription = document.getElementById("lightboxDescription");
 
-        const lightbox = document.getElementById('lightbox');
-        lightbox.innerHTML = `
-            <div class="lightbox-content">
-                <span class="lightbox-close" onclick="lightboxInstance.close()">&times;</span>
-                <button class="lightbox-prev" onclick="lightboxInstance.previous()">&#10094;</button>
-                <img src="${item.image}" alt="${item.title}" class="lightbox-image">
-                <button class="lightbox-next" onclick="lightboxInstance.next()">&#10095;</button>
-                <div class="lightbox-info">
-                    <h2>${item.title}</h2>
-                    <p class="lightbox-artist">by ${item.artist}</p>
-                    <p class="lightbox-description">${item.description}</p>
-                </div>
-            </div>
-        `;
-        lightbox.classList.add('active');
-    }
+const lightboxStatus = document.getElementById("lightboxStatus");
 
-    handleKeyboard(e) {
-        if (!this.isOpen) return;
-        
-        switch(e.key) {
-            case 'Escape':
-                this.close();
-                break;
-            case 'ArrowLeft':
-                this.previous();
-                break;
-            case 'ArrowRight':
-                this.next();
-                break;
-        }
-    }
+const closeButton = document.getElementById("closeLightbox");
+
+const previousButton = document.getElementById("previousArtwork");
+
+const nextButton = document.getElementById("nextArtwork");
+
+
+/* ======================================================
+OPEN
+====================================================== */
+
+function openLightbox(id){
+
+    currentArtworkIndex = artworks.findIndex(item => item.id === id);
+
+    showArtwork();
+
+    lightbox.classList.add("show");
+
+    document.body.style.overflow = "hidden";
+
 }
 
-const lightboxInstance = new Lightbox();
 
-// Override global openLightbox function
-function openLightbox(itemId) {
-    lightboxInstance.open(itemId);
+/* ======================================================
+SHOW
+====================================================== */
+
+function showArtwork(){
+
+    const artwork = artworks[currentArtworkIndex];
+
+    lightboxImage.src = artwork.image;
+    lightboxImage.loading = "eager";
+
+    lightboxImage.alt = artwork.title;
+
+    lightboxTitle.textContent = artwork.title;
+
+    lightboxMedium.textContent =
+        `${artwork.medium} • ${artwork.year}`;
+
+    lightboxDescription.textContent =
+        artwork.description;
+
+    lightboxStatus.textContent =
+        artwork.status.toUpperCase();
+
+    lightboxStatus.className =
+    `status ${artwork.status}`;
+
 }
 
-function closeLightbox() {
-    lightboxInstance.close();
+
+/* ======================================================
+CLOSE
+====================================================== */
+
+function closeLightbox(){
+
+    lightbox.classList.remove("show");
+
+    document.body.style.overflow = "";
+
 }
+
+
+/* ======================================================
+NEXT
+====================================================== */
+
+function nextArtwork(){
+
+    currentArtworkIndex++;
+
+    if(currentArtworkIndex >= artworks.length){
+
+        currentArtworkIndex = 0;
+
+    }
+
+    showArtwork();
+
+}
+
+
+/* ======================================================
+PREVIOUS
+====================================================== */
+
+function previousArtwork(){
+
+    currentArtworkIndex--;
+
+    if(currentArtworkIndex < 0){
+
+        currentArtworkIndex =
+            artworks.length - 1;
+
+    }
+
+    showArtwork();
+
+}
+
+
+/* ======================================================
+BUTTONS
+====================================================== */
+
+closeButton.addEventListener("click", closeLightbox);
+
+nextButton.addEventListener("click", nextArtwork);
+
+previousButton.addEventListener("click", previousArtwork);
+
+
+/* ======================================================
+ESC
+====================================================== */
+
+document.addEventListener("keydown", event=>{
+
+    if(!lightbox.classList.contains("show"))
+        return;
+
+    if(event.key==="Escape")
+        closeLightbox();
+
+    if(event.key==="ArrowRight")
+        nextArtwork();
+
+    if(event.key==="ArrowLeft")
+        previousArtwork();
+
+});
+
+
+/* ======================================================
+CLICK OUTSIDE
+====================================================== */
+
+lightbox.addEventListener("click", event=>{
+
+    if(event.target===lightbox){
+
+        closeLightbox();
+
+    }
+
+});

@@ -1,54 +1,137 @@
-// Gallery Data
+/*
+==========================================================
+ JANAKIRAMAN PORTFOLIO
+ Artwork Data
+==========================================================
+*/
 
-const galleryData = [
+const artworks = [
+
     {
         id: 1,
-        title: 'Sunset Over Mountains',
-        artist: 'Jane Doe',
-        category: 'landscape',
-        image: 'assets/images/gallery/sunset-mountains.jpg',
-        description: 'A beautiful watercolor painting of sunset over mountains'
+        title: "Banyan Tree",
+        image: "assets/images/gallery/banyan-tree.jpg",
+        category: "Nature",
+        medium: "Watercolour on Paper",
+        year: "2025",
+        size: "Original",
+        status: "available",
+        featured: true,
+        description: "A peaceful banyan tree standing as the heart of the landscape."
     },
+
     {
         id: 2,
-        title: 'Ocean Waves',
-        artist: 'John Smith',
-        category: 'seascape',
-        image: 'assets/images/gallery/ocean-waves.jpg',
-        description: 'Dynamic watercolor depicting ocean waves'
+        title: "Purple Blossom Street",
+        image: "assets/images/gallery/purple-blossom-street.jpg",
+        category: "Street",
+        medium: "Watercolour on Paper",
+        year: "2025",
+        size: "Original",
+        status: "available",
+        featured: true,
+        description: "Blooming trees transforming an ordinary street into a vibrant tunnel."
     },
+
     {
         id: 3,
-        title: 'Forest Clearing',
-        artist: 'Emily Brown',
-        category: 'landscape',
-        image: 'assets/images/gallery/forest-clearing.jpg',
-        description: 'Peaceful watercolor of a forest clearing'
+        title: "Temple Entrance",
+        image: "assets/images/gallery/temple-entrance.jpg",
+        category: "Temple",
+        medium: "Watercolour on Paper",
+        year: "2025",
+        size: "Original",
+        status: "available",
+        featured: true,
+        description: "Morning light surrounding a South Indian temple entrance."
     },
+
     {
         id: 4,
-        title: 'Abstract Bloom',
-        artist: 'Michael Chen',
-        category: 'abstract',
-        image: 'assets/images/gallery/abstract-bloom.jpg',
-        description: 'Abstract watercolor composition'
+        title: "Umbrellas in Rain",
+        image: "assets/images/gallery/umbrella-rain.jpg",
+        category: "Street",
+        medium: "Watercolour on Paper",
+        year: "2025",
+        size: "Original",
+        status: "available",
+        featured: true,
+        description: "Everyday life continuing through a gentle monsoon."
     },
+
     {
         id: 5,
-        title: 'Portrait Study',
-        artist: 'Sarah Wilson',
-        category: 'portrait',
-        image: 'assets/images/gallery/portrait-study.jpg',
-        description: 'Watercolor portrait study'
+        title: "Village Mother",
+        image: "assets/images/gallery/village-mother.jpg",
+        category: "People",
+        medium: "Watercolour on Paper",
+        year: "2025",
+        size: "Original",
+        status: "available",
+        featured: false,
+        description: "A quiet portrait celebrating rural life."
     },
+
     {
         id: 6,
-        title: 'Spring Flowers',
-        artist: 'David Lee',
-        category: 'floral',
-        image: 'assets/images/gallery/spring-flowers.jpg',
-        description: 'Vibrant watercolor of spring flowers'
+        title: "Beach Umbrellas",
+        image: "assets/images/gallery/beach-umbrellas.jpg",
+        category: "Landscape",
+        medium: "Watercolour on Paper",
+        year: "2025",
+        size: "Original",
+        status: "available",
+        featured: false,
+        description: "A colourful beach scene filled with sunlight."
+    },
+
+    {
+        id: 7,
+        title: "Temple Street",
+        image: "assets/images/gallery/temple-street.jpg",
+        category: "Temple",
+        medium: "Watercolour on Paper",
+        year: "2025",
+        size: "Original",
+        status: "available",
+        featured: false,
+        description: "Traditional architecture and everyday movement."
+    },
+
+    {
+        id: 8,
+        title: "Village Walk",
+        image: "assets/images/gallery/village-walk.jpg",
+        category: "People",
+        medium: "Watercolour on Paper",
+        year: "2025",
+        size: "Original",
+        status: "available",
+        featured: false,
+        description: "Daily life unfolding through simple moments."
     }
+
 ];
 
-const categories = ['all', 'landscape', 'seascape', 'portrait', 'floral', 'abstract'];
+
+/*
+==========================================================
+ Categories
+==========================================================
+*/
+
+const categories = [
+
+    "All",
+
+    "Nature",
+
+    "Temple",
+
+    "Street",
+
+    "People",
+
+    "Landscape"
+
+];
