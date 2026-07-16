@@ -1,0 +1,285 @@
+/* ==========================================================
+   GALLERY
+========================================================== */
+
+.featured{
+
+    background:#F4F0EA;
+
+}
+
+#featuredGrid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(auto-fit,minmax(320px,1fr));
+
+    gap:40px;
+
+}
+
+/* ==========================================================
+   FILTERS
+========================================================== */
+
+#categoryFilters{
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:14px;
+
+    margin-bottom:60px;
+
+}
+
+.filter-btn{
+
+    border:none;
+
+    background:white;
+
+    border-radius:40px;
+
+    padding:12px 26px;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+    font-size:15px;
+
+    box-shadow:0 5px 18px rgba(0,0,0,.05);
+
+}
+
+.filter-btn:hover{
+
+    transform:translateY(-2px);
+
+}
+
+.filter-btn.active{
+
+    background:#8B6549;
+
+    color:white;
+
+}
+
+/* ==========================================================
+   GALLERY GRID
+========================================================== */
+
+#galleryGrid{
+
+    column-count:3;
+
+    column-gap:28px;
+
+}
+
+/* ==========================================================
+   CARD
+========================================================== */
+
+.artwork-card{
+
+    display:inline-block;
+
+    width:100%;
+
+    margin-bottom:28px;
+
+    background:white;
+
+    overflow:hidden;
+
+    border-radius:18px;
+
+    box-shadow:
+
+    0 12px 30px rgba(0,0,0,.07);
+
+    cursor:pointer;
+
+    transition:.35s;
+
+}
+
+.artwork-card:hover{
+
+    transform:translateY(-6px);
+
+}
+
+/* ==========================================================
+   IMAGE
+========================================================== */
+
+.image-wrapper{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.artwork-image img,
+.image-wrapper img{
+
+    width:100%;
+
+    display:block;
+
+    transition:1s;
+
+}
+
+.artwork-card:hover img{
+
+    transform:scale(1.05);
+
+}
+
+/* ==========================================================
+   OVERLAY
+========================================================== */
+
+.overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:rgba(0,0,0,.35);
+
+    opacity:0;
+
+    transition:.35s;
+
+}
+
+.artwork-card:hover .overlay{
+
+    opacity:1;
+
+}
+
+.view-art{
+
+    color:white;
+
+    border:1px solid rgba(255,255,255,.7);
+
+    padding:12px 24px;
+
+    border-radius:100px;
+
+    backdrop-filter:blur(10px);
+
+}
+
+/* ==========================================================
+   INFO
+========================================================== */
+
+.artwork-info{
+
+    padding:24px;
+
+}
+
+.category{
+
+    color:#8B6549;
+
+    font-size:13px;
+
+    text-transform:uppercase;
+
+    letter-spacing:1px;
+
+}
+
+.artwork-info h3{
+
+    margin:10px 0;
+
+    font-size:30px;
+
+}
+
+.artwork-info p{
+
+    margin-bottom:16px;
+
+}
+
+/* ==========================================================
+   STATUS
+========================================================== */
+
+.status{
+
+    display:inline-block;
+
+    padding:6px 14px;
+
+    border-radius:50px;
+
+    font-size:12px;
+
+    text-transform:uppercase;
+
+    letter-spacing:1px;
+
+}
+
+.available{
+
+    background:#EAF7EE;
+
+    color:#1D7C39;
+
+}
+
+.sold{
+
+    background:#F8E7E7;
+
+    color:#A62E2E;
+
+}
+
+.private{
+
+    background:#EFEFEF;
+
+}
+
+.commission{
+
+    background:#FFF3DB;
+
+}
+
+/* ==========================================================
+   FEATURED CARD
+========================================================== */
+
+.featured-card{
+
+    margin-bottom:0;
+
+}
